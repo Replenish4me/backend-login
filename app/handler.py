@@ -34,7 +34,6 @@ def lambda_handler(event, context):
             result = cursor.fetchone()
             
             if result is None:
-                conn.close()
                 response = {
                     "statusCode": 401,
                     "headers": {
@@ -48,7 +47,6 @@ def lambda_handler(event, context):
             usuario_id, nome, senha_hash = result
             
             if senha != senha_hash:
-                conn.close()
                 response = {
                     "statusCode": 401,
                     "headers": {
