@@ -4,6 +4,7 @@ import pymysql
 import uuid
 import hashlib
 import datetime
+import os
 
 def lambda_handler(event, context):
     
